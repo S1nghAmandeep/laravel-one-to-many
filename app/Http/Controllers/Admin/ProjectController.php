@@ -54,7 +54,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+
+        $categories = Category::orderBy('name', 'asc')->get();
+        return view('admin.projects.edit', compact('project', 'categories'));
     }
 
     /**
