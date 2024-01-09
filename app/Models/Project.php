@@ -13,7 +13,8 @@ class Project extends Model
         'title',
         'link_project',
         'language',
-        'description'
+        'description',
+        'category_id'
     ];
 
     public function category()
