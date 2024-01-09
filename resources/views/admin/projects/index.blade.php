@@ -27,7 +27,7 @@
                             <td><a class="btn btn-primary btn-sm" href="{{ route('admin.projects.edit', $project) }}">edit</a></td>
                             <td>
                                 <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
-
+                                                                        
                                     @csrf
                                     @method('delete')
                                     <button class="btn btn-danger btn-sm">Delete</button>
