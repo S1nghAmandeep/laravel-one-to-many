@@ -9,6 +9,20 @@
             @if ($project->category)
                 <p>{{ $project->category->name }}</p>
             @endif
+            <ul>
+                <li class="mb-3">
+                    <a class="btn btn-primary btn-sm" href="{{ route('admin.projects.edit', $project) }}">Edit</a>
+                </li>
+                <li>
+                    <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </li>
+            </ul>
+           
+        
         </div>
     </section>
 @endsection
