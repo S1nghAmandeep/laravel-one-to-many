@@ -21,6 +21,14 @@
                     <label for="language" class="form-label">Language</label>
                     <input type="text" class="form-control" name="language" id="language" placeholder="Language" value="{{ $project->language }}">
                   </div>
+                  <div>
+                    <select class="form-select" name="category_id" id="category_id" aria-label="Default select example">
+                      <option selected>Select Category</option>
+                      @foreach ($categories as $category)
+                      <option @selected( old('category_id', optional($project->category)->id) == $category->id ) value="{{ $category->id }}">{{ $category->name }}</option>
+                      @endforeach
+                    </select>
+                  </div>
                   <div class="mb-3">
                     <label for="description" class="form-label">Descrizione</label>
                     <textarea class="form-control" name="description" id="description" rows="3" placeholder="Descrivi il comic">{{ $project->description }}
